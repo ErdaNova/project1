@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">갤러리</string>
+
+    <string name="empty">No Images on this device</string>
+    <string name="tab_text_1" translatable="false">연락처</string>
+    <string name="tab_text_2" translatable="false">사진첩</string>
+    <string name="tab_text_3" translatable="false">자유</string>
+    <string name="folderName">Folder Name</string>
+</resources>

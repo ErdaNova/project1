@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'com.google.android.material:material:1.2.0-alpha02'
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+    api 'androidx.exifinterface:exifinterface:1.1.0'
+}
+
+// maven
+apply plugin: 'maven'
+def repo = new File(rootDir, "../AndroidRepos")
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository url: "file://${repo.absolutePath}"
+            pom.version = '1.0.10'
+            pom.groupId = 'jp.yamato.malta.android'
+            pom.artifactId = 'gallery-fragment'
+        }
+    }
+}
