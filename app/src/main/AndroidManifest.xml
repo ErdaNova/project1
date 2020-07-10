@@ -23,7 +23,7 @@
 
         <activity
             android:name=".ui.MainActivity"
-            android:label="프로젝트1"
+            android:label="Project1"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
