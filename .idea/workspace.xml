@@ -12,14 +12,14 @@
   <component name="ChangeListManager">
     <list default="true" id="5bfd5374-c7e6-4815-a531-d71fb09f25ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Android-Simple-Image-Gallery" beforeDir="false" afterPath="$PROJECT_DIR$/../Android-Simple-Image-Gallery" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_30" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -44,7 +44,7 @@
     <option name="ONTO" value="refs/heads/master" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1eP4J4RSeL6li920dqTm7jKdX4p" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -236,6 +236,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2674" y="297" key="chooseDestDirectoryDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594350523439" />
+    <state x="2012" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594369368679">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2012" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594369368679" />
     <state x="2572" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1594273978974">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
