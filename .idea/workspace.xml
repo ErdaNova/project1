@@ -12,14 +12,26 @@
   <component name="ChangeListManager">
     <list default="true" id="5bfd5374-c7e6-4815-a531-d71fb09f25ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Android-Simple-Image-Gallery" beforeDir="false" afterPath="$PROJECT_DIR$/../Android-Simple-Image-Gallery" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< Updated upstream
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
+=======
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ce0216025198962c04" />
+>>>>>>> Stashed changes
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -204,6 +216,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2527" y="113" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594276741333" />
+    <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1594370470899">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594370470899" />
     <state x="2660" y="261" key="FileChooserDialogImpl" timestamp="1594368130371">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -212,22 +228,22 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2737" y="410" key="Github.ShareDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594368187015" />
-    <state width="1921" height="245" key="GridCell.Tab.0.bottom" timestamp="1594366998219">
+    <state width="1921" height="335" key="GridCell.Tab.0.bottom" timestamp="1594370551451">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594366998219" />
-    <state width="1921" height="245" key="GridCell.Tab.0.center" timestamp="1594366998219">
+    <state width="1921" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594370551451" />
+    <state width="1921" height="335" key="GridCell.Tab.0.center" timestamp="1594370551451">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="245" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594366998219" />
-    <state width="1921" height="245" key="GridCell.Tab.0.left" timestamp="1594366998219">
+    <state width="1921" height="335" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594370551451" />
+    <state width="1921" height="335" key="GridCell.Tab.0.left" timestamp="1594370551451">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="245" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594366998219" />
-    <state width="1921" height="245" key="GridCell.Tab.0.right" timestamp="1594366998219">
+    <state width="1921" height="335" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594370551451" />
+    <state width="1921" height="335" key="GridCell.Tab.0.right" timestamp="1594370551451">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="245" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594366998219" />
+    <state width="1921" height="335" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594370551451" />
     <state x="2381" y="162" key="SettingsEditor" timestamp="1594276384703">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -244,6 +260,14 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2572" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594273978974" />
+    <state x="2678" y="310" key="git4idea.merge.GitMergeDialog" timestamp="1594370547026">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2678" y="310" key="git4idea.merge.GitMergeDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594370547026" />
+    <state x="2678" y="310" width="545" height="420" key="git4idea.merge.GitPullDialog" timestamp="1594371078464">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2678" y="310" width="545" height="420" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594371078464" />
     <state x="2678" y="383" key="git4idea.rebase.GitRebaseDialog" timestamp="1594274620160">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

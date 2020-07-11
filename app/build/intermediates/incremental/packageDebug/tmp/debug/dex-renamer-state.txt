@@ -1,7 +1,4 @@
-#Fri Jul 10 17:24:18 KST 2020
-base.0=C\:\\Users\\q\\Desktop\\project1-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.1=classes.dex
-renamed.1=classes2.dex
+#Sat Jul 11 18:12:29 KST 2020
+base.0=C\:\\Users\\q\\Desktop\\project1\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\q\\Desktop\\GJ\\project1\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
