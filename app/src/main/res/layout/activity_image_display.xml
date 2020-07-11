@@ -15,19 +15,19 @@
             android:id="@+id/head"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            app:cardBackgroundColor="@color/skyblue">
+            app:cardBackgroundColor="@color/colorAccent">
 
             <TextView
                 android:id="@+id/foldername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="@string/folderName"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp" />
+                android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
 
