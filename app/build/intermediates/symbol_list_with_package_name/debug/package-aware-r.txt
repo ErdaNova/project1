@@ -1336,6 +1336,7 @@ id parent
 id parentPanel
 id parent_matrix
 id percent
+id photo
 id pin
 id progress_circular
 id progress_horizontal
