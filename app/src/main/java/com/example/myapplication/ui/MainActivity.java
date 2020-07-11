@@ -69,6 +69,12 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
 
         }else {
             Toast.makeText(this, "권한을 모두 허용", Toast.LENGTH_SHORT).show();
+            ViewPager viewPager = (ViewPager)findViewById(R.id.viewPager);
+            fragmentPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+            TabLayout tabLayout = findViewById(R.id.tab_layout);
+            viewPager.setAdapter(fragmentPagerAdapter);
+            tabLayout.setupWithViewPager(viewPager);
 
 
 
