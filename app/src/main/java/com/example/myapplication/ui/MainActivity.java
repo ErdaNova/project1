@@ -64,6 +64,13 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
             temp += Manifest.permission.WRITE_EXTERNAL_STORAGE + " ";
         }
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            temp += Manifest.permission.ACCESS_COARSE_LOCATION + " ";
+        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            temp += Manifest.permission.ACCESS_FINE_LOCATION + " ";
+        }
+
         if (TextUtils.isEmpty(temp) == false) {
             ActivityCompat.requestPermissions(this, temp.trim().split(" "),1);
 
