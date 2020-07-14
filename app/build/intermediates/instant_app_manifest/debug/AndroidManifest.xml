@@ -45,6 +45,13 @@
             android:value="AIzaSyC6roAliCOgdd92LFth81l1GveihpSssTM" />
 
         <activity
+<<<<<<< HEAD
+=======
+            android:name="com.example.myapplication.ui.CallOrMsgSelect"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+        <activity
+>>>>>>> f49ef35... +marker
             android:name="com.example.myapplication.ui.MainActivity"
             android:label="Project1"
             android:theme="@style/AppTheme.NoActionBar" >

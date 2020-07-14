@@ -10,6 +10,7 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -79,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
 
             TabLayout tabLayout = findViewById(R.id.tab_layout);
             viewPager.setAdapter(fragmentPagerAdapter);
-            viewPager.setOffscreenPageLimit(10);
             tabLayout.setupWithViewPager(viewPager);
         }
     }

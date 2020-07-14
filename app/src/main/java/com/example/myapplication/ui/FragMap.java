@@ -115,28 +115,39 @@ public class FragMap extends Fragment
 
 
 
+    private double lat= 49.2827291;
+    private double longi = -123.1207375;
 
 
     @Override
     public void onMapReady(final GoogleMap googleMap) {
         map = googleMap;
         final Geocoder g = new Geocoder(getContext());
-        LatLng Vancouver = new LatLng(49.2827291, -123.1207375);
+        LatLng Vancouver = new LatLng(lat, longi);
         List<Address> addresses = null;
+        try{
+            googleMap.clear();
+            List<Address> resultList = g.getFromLocation(lat,longi,10);
+            Log.d(TAG,resultList.get(1).getAddressLine(0));
+            MarkerOptions mOptions = new MarkerOptions();
+
+            mOptions.title("위치");
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(lat, longi)));
 
 
 
+            mOptions.snippet(resultList.get(0).getAddressLine(0).toString());
+            mOptions.position(new LatLng(lat,longi));
+
+            googleMap.addMarker(mOptions);
+
+        } catch (IOException e) {
+
+        }
 
 
 
-
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(Vancouver);
-        markerOptions.title("벤쿠버");
-        markerOptions.snippet("도시");
-        googleMap.addMarker(markerOptions);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Vancouver));
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(13));
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(14));
 
         uiSettings = map.getUiSettings();
         map.setOnMyLocationButtonClickListener(this);
@@ -144,7 +155,7 @@ public class FragMap extends Fragment
         enableMyLocation();
         uiSettings.setZoomControlsEnabled(true);
         uiSettings.setCompassEnabled(true);
-        setSelectedStyle(0);
+
         setHasOptionsMenu(true);
 
         map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
@@ -160,6 +171,10 @@ public class FragMap extends Fragment
                     MarkerOptions mOptions = new MarkerOptions();
 
                     mOptions.title("위치");
+                    lat=point.latitude;
+                    longi=point.longitude;
+
+
 
 
                     mOptions.snippet(resultList.get(0).getAddressLine(0).toString());
@@ -168,19 +183,7 @@ public class FragMap extends Fragment
                     googleMap.addMarker(mOptions);
 
                 } catch (IOException e) {
-                    googleMap.clear();
-                    e.printStackTrace();
-                    MarkerOptions mOptions = new MarkerOptions();
 
-                    mOptions.title("위치 좌표");
-                    Double latitude = point.latitude;
-                    Double longitude = point.longitude;
-
-
-                    mOptions.snippet(latitude.toString()+','+longitude.toString());
-                    mOptions.position(new LatLng(point.latitude,point.longitude));
-
-                    googleMap.addMarker(mOptions);
                 }
 
 
@@ -205,14 +208,39 @@ public class FragMap extends Fragment
 
     @Override
     public boolean onMyLocationButtonClick() {
-        Toast.makeText(this.getContext(), "MyLocation button clicked", Toast.LENGTH_SHORT).show();
+
         return false;
     }
 
     @Override
     public void onMyLocationClick(@NonNull Location location) {
-        Toast.makeText(this.getContext(), "Current location:\n" + location, Toast.LENGTH_LONG).show();
+        final Geocoder g = new Geocoder(getContext());
+        try{
+            map.clear();
+            lat=location.getLatitude();
+            longi=location.getLongitude();
+            map.clear();
+            List<Address> resultList = g.getFromLocation(lat,longi,10);
+
+            MarkerOptions mOptions = new MarkerOptions();
+
+            mOptions.title("위치");
+
+
+
+            mOptions.snippet(resultList.get(0).getAddressLine(0).toString());
+            mOptions.position(new LatLng(lat,longi));
+
+            map.addMarker(mOptions);
+
+        } catch (IOException e) {
+
+        }
+
+
     }
+
+    
 
 
     @Override

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:1-47:12
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:1-55:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\f75585c014057c2af7101f0097c941f9\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.maps.android:maps-utils-ktx:1.7.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\d685cc1ab02d9a217a8e19e927369c10\jetified-maps-utils-ktx-1.7.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\59c7974e59a21dc5facfb0f1773fa266\material-1.0.0\AndroidManifest.xml:17:1-24:12
@@ -60,37 +60,37 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\6083e5aff4a41b4b352509ce72ef01fb\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\q\.gradle\caches\transforms-2\files-2.1\b3f696b35a15fe22d501cd196c4c7c83\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.datatransport:transport-api:2.1.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\3aee6936b57debb31f675001beee1436\jetified-transport-api-2.1.0\AndroidManifest.xml:15:1-22:12
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:1-55:12
 	package
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:3:5-40
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:3:5-40
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:1-47:12
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:1-55:12
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:1-47:12
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:1-55:12
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:5:5-71
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:5:5-71
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:5:22-69
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:5:22-69
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:7:5-8:67
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:7:5-8:67
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:8:9-64
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:8:9-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:9:5-10:68
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:9:5-10:68
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:10:9-65
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:10:9-65
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:11:5-66
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:11:5-66
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\ff2280665d7310a6c611dce715cdb416\jetified-places-2.2.0\AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\ff2280665d7310a6c611dce715cdb416\jetified-places-2.2.0\AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\7345f62f6933bfbfe70b0b6c644df5f1\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
@@ -98,33 +98,33 @@ MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradl
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\0fec670e809f9cd4ebb5eff66c748892\jetified-transport-backend-cct-2.1.0\AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\0fec670e809f9cd4ebb5eff66c748892\jetified-transport-backend-cct-2.1.0\AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:11:22-64
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:11:22-64
 uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:12:5-97
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:12:5-97
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:12:22-95
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:12:22-95
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:13:5-80
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:13:5-80
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:13:22-78
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:13:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:14:5-78
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:14:5-78
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\ff2280665d7310a6c611dce715cdb416\jetified-places-2.2.0\AndroidManifest.xml:9:5-79
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\ff2280665d7310a6c611dce715cdb416\jetified-places-2.2.0\AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:14:22-76
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:14:22-76
 uses-permission#android.permission.CALL_PHONE
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:15:5-69
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:15:5-69
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:15:22-66
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:15:22-66
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:17:5-19:67
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:17:5-19:67
 	android:value
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:19:9-64
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:19:9-64
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:18:9-54
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:18:9-54
 application
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:24:5-45:19
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:24:5-53:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\59c7974e59a21dc5facfb0f1773fa266\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\59c7974e59a21dc5facfb0f1773fa266\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.libraries.places:places:2.2.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\ff2280665d7310a6c611dce715cdb416\jetified-places-2.2.0\AndroidManifest.xml:13:5-21:19
@@ -168,39 +168,45 @@ MERGED from [com.android.volley:volley:1.1.1] C:\Users\q\.gradle\caches\transfor
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\8106c9afeb27cc0c50f85995740f877c\core-1.3.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:29:9-35
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:29:9-35
 	android:label
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:27:9-33
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:27:9-33
 	android:roundIcon
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:28:9-54
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:28:9-54
 	android:icon
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:26:9-43
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:26:9-43
 	android:allowBackup
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:25:9-35
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:25:9-35
 	android:theme
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:30:9-40
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:30:9-40
+activity#com.example.myapplication.ui.CallOrMsgSelect
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:36:9-39:20
+	android:theme
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:38:13-53
+	android:name
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:37:13-47
 activity#com.example.myapplication.ui.MainActivity
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:35:9-44:20
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:41:9-52:20
 	android:label
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:37:13-37
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:43:13-37
 	android:theme
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:38:13-56
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:44:13-56
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:36:13-44
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:42:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:39:13-43:29
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:45:13-49:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:40:17-69
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:46:17-69
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:40:25-66
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:46:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:42:17-77
+ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:48:17-77
 	android:name
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:42:27-74
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml:48:27-74
 uses-sdk
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\f75585c014057c2af7101f0097c941f9\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\f75585c014057c2af7101f0097c941f9\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [com.google.maps.android:maps-utils-ktx:1.7.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\d685cc1ab02d9a217a8e19e927369c10\jetified-maps-utils-ktx-1.7.0\AndroidManifest.xml:5:5-7:41
@@ -313,16 +319,16 @@ MERGED from [com.android.volley:volley:1.1.1] C:\Users\q\.gradle\caches\transfor
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\q\.gradle\caches\transforms-2\files-2.1\b3f696b35a15fe22d501cd196c4c7c83\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
 MERGED from [com.google.android.datatransport:transport-api:2.1.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\3aee6936b57debb31f675001beee1436\jetified-transport-api-2.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-api:2.1.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\3aee6936b57debb31f675001beee1436\jetified-transport-api-2.1.0\AndroidManifest.xml:18:5-20:41
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\q\Desktop\project1-master\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from [com.google.android.libraries.places:places:2.2.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\ff2280665d7310a6c611dce715cdb416\jetified-places-2.2.0\AndroidManifest.xml:10:5-76
 	android:name
