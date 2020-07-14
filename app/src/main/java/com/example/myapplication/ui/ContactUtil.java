@@ -1,9 +1,7 @@
 package com.example.myapplication.ui;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashSet;
-import java.util.Map;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -12,65 +10,6 @@ import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 
 public class ContactUtil {
-
-    /**
-     * 내 전화번호 가져오기
-     * @param context
-     * @param isIDD 국제전화 규격 적용 여부
-     * @return
-     */
-    public static String myPhoneNumber(Context context, boolean isIDD)
-    {
-        TelephonyManager phone = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        if (isIDD)
-            return getIDD(phone.getLine1Number());
-        else
-            return phone.getLine1Number();
-    }
-    /**
-     * 내 전화번호 가져오기
-     * @param context
-     * @return 전화번호
-     */
-    public static String myPhoneNumber(Context context)
-    {
-        return myPhoneNumber(context, false);
-    }
-
-
-    /**
-     * 주소록에 있는 전화번호 목록 가져오기
-     * @param context
-     * @param isIDD 국제전화 규격 적용 여부
-     * @return 주소록의 전화번호
-     */
-    public static ArrayList<String> contactPhoneNumber(Context context, boolean isIDD)
-    {
-        ArrayList<String> phone = new ArrayList<String>();
-        Cursor cursor = context.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " COLLATE LOCALIZED ASC");
-        while(cursor.moveToNext())
-        {
-            int index = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-            String s = cursor.getString(index);
-
-            if (isIDD)
-                phone.add(getIDD(s));
-            else
-                phone.add(s);
-        }
-
-        return phone;
-    }
-    /**
-     * 주소록에 있는 전화번호 목록 가져오기
-     * @param context
-     * @return 주소록의 전화번호
-     */
-    public static ArrayList<String> contactPhoneNumber(Context context)
-    {
-        return contactPhoneNumber(context, false);
-    }
-
 
     /**
      * 주소록의 이름, 전화번호 맵을 가져온다
@@ -89,7 +28,7 @@ public class ContactUtil {
         };
         String sortOrder = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " COLLATE LOCALIZED ASC";
         Cursor cursor = context.getContentResolver().query(uri, projection, null, null, sortOrder);
-        LinkedHashSet<Person> hashlist = new LinkedHashSet<>();
+        LinkedHashSet<Person> personlist = new LinkedHashSet<>();
         while(cursor.moveToNext())
         {
             Person Item = new Person();
@@ -101,11 +40,9 @@ public class ContactUtil {
             Item.setPhoto_id(cursor.getLong(2));
             Item.setPerson_id(cursor.getLong(3));
 
-            hashlist.add(Item);
-
-//          Log.e("####getAddressBook", name + " : "+phone);
+            personlist.add(Item);
         }
-        ArrayList<Person> result = new ArrayList<>(hashlist);
+        ArrayList<Person> result = new ArrayList<>(personlist);
         return result;
     }
     /**
@@ -135,6 +72,3 @@ public class ContactUtil {
         return result;
     }
 }
-
-
-//출처: https://susemi99.tistory.com/801 [쎄미 - 우물쭈물하다가 내 이럴 줄 알았지]

@@ -1,68 +1,27 @@
 package com.example.myapplication.ui;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import com.example.myapplication.R;
-import com.example.myapplication.ui.imageIndicatorListener;
-import com.example.myapplication.ui.recyclerViewPagerImageIndicator;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 
-
-
-import com.example.myapplication.ui.MarginDecoration;
-import com.example.myapplication.ui.PicHolder;
-import com.example.myapplication.ui.imageFolder;
-import com.example.myapplication.ui.itemClickListener;
-import com.example.myapplication.ui.pictureFacer;
-import com.example.myapplication.ui.pictureFolderAdapter;
 import java.util.ArrayList;
 
-
-
-import static androidx.core.view.ViewCompat.setTransitionName;
-
-
-
-/**
- * Author: CodeBoy722
- *
- * this fragment handles the browsing of all images in an ArrayList of pictureFacer passed in the constructor
- * the images are loaded in a ViewPager an a RecyclerView is used as a pager indicator for
- * each image in the ViewPager
- */
 public class FragGallery extends Fragment implements itemClickListener{
 
     RecyclerView folderRecycler;
     TextView empty;
-    private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
 
     @Nullable
     @Override
@@ -70,13 +29,9 @@ public class FragGallery extends Fragment implements itemClickListener{
 
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.frag_gallery, container, false);
 
-        if(ContextCompat.checkSelfPermission(getActivity(),
-                Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(getActivity(),
-                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                    MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
-            //____________________________________________________________________________________
+        /*if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);*/
+        //____________________________________________________________________________________
 
         empty =rootView.findViewById(R.id.empty);
 
@@ -113,7 +68,7 @@ public class FragGallery extends Fragment implements itemClickListener{
             }
             do{
                 imageFolder folds = new imageFolder();
-                String name = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DISPLAY_NAME));
+                //String name = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DISPLAY_NAME));
                 String folder = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.BUCKET_DISPLAY_NAME));
                 String datapath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
 

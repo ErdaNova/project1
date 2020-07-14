@@ -16,37 +16,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
-
-
-
-import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
-import android.provider.MediaStore;
-
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.widget.TextView;
-
-
 
 import java.util.ArrayList;
 import androidx.core.content.ContextCompat;
 
 
-
-import android.Manifest;
-import android.widget.Toast;
-
-
 public class MainActivity extends AppCompatActivity implements itemClickListener{
 
-    RecyclerView folderRecycler;
-    TextView empty;
-    private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
     private FragmentPagerAdapter fragmentPagerAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,43 +47,33 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             temp += Manifest.permission.ACCESS_FINE_LOCATION + " ";
         }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            temp += Manifest.permission.CALL_PHONE + " ";
+        }
 
         if (TextUtils.isEmpty(temp) == false) {
             ActivityCompat.requestPermissions(this, temp.trim().split(" "),1);
-
         }else {
-            Toast.makeText(this, "권한을 모두 허용", Toast.LENGTH_SHORT).show();
+            //app 시작
             ViewPager viewPager = (ViewPager)findViewById(R.id.viewPager);
             fragmentPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
             TabLayout tabLayout = findViewById(R.id.tab_layout);
             viewPager.setAdapter(fragmentPagerAdapter);
             tabLayout.setupWithViewPager(viewPager);
-
-
-
         }
-
-
-
-
-
-
-
     }
-
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        //권한을 허용 했을 경우
-        if (requestCode == 1) {
+        if (requestCode == 1) {    //권한을 허용 했을 경우
             int length = permissions.length;
             for (int i = 0; i < length; i++) {
                 if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
                     Log.d("MainActivity", "권한 허용 : " + permissions[i]);
                 }
             }
+            // app 시작
             ViewPager viewPager = (ViewPager)findViewById(R.id.viewPager);
             fragmentPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 

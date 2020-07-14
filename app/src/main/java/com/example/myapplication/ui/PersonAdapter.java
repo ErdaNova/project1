@@ -54,18 +54,18 @@ public class PersonAdapter extends ArrayAdapter<Person>
         else {
             photo.setImageResource(R.drawable.ic_launcher_foreground);
         }
+        // round 이미지
+        /*photo.setBackground(new ShapeDrawable(new OvalShape()));
+        if (Build.VERSION.SDK_INT>=21) {
+            photo.setClipToOutline(true);
+        }*/
         name.setText(p.getName());
         number.setText("전화번호: "+ p.getNumber());
 
         return v;
     }
 
-    public int getItemCount() {
-        return items.size();
-    }
-
     public Bitmap loadPhoto(ContentResolver cr, long id, long photo_id) {
-
         byte[] photoBytes = null;
         Uri photoUri = ContentUris.withAppendedId(ContactsContract.Data.CONTENT_URI, photo_id);
         Cursor c = cr.query(photoUri, new String[]{ContactsContract.CommonDataKinds.Photo.PHOTO},

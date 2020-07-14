@@ -14,9 +14,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,37 +24,35 @@ import com.example.myapplication.R;
 
 import java.util.ArrayList;
 
-/**
- * Author CodeBoy722
- *
- * This Activity get a path to a folder that contains images from the MainActivity Intent and displays
- * all the images in the folder inside a RecyclerView
- */
-
 public class ImageDisplay extends Fragment implements itemClickListener {
 
     RecyclerView imageRecycler;
     ArrayList<pictureFacer> allpictures;
     ProgressBar load;
-    String foldePath;
+    String folderPath;
     TextView folderName;
-
-    public static ImageDisplay newinstance(){
-        ImageDisplay imageDisplay = new ImageDisplay();
-        return imageDisplay;
-    }
+    CardView folderNameCard;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_image_display, container, false);
-        Bundle bundle = getArguments();
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.frag_image_display, container, false);
+
+        folderNameCard = rootView.findViewById(R.id.head);
+        folderNameCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         folderName = rootView.findViewById(R.id.foldername);
         //folderName.setText(getIntent().getStringExtra("folderName"));
         //foldePath =  getIntent().getStringExtra("folderPath");
+        Bundle bundle = getArguments();
         folderName.setText(bundle.getString("folderName"));
-        foldePath = bundle.getString("folderPath");
+        folderPath = bundle.getString("folderPath");
 
         allpictures = new ArrayList<>();
         imageRecycler = rootView.findViewById(R.id.recycler);
@@ -63,15 +60,11 @@ public class ImageDisplay extends Fragment implements itemClickListener {
         imageRecycler.hasFixedSize();
         load = rootView.findViewById(R.id.loader);
 
+        load.setVisibility(View.VISIBLE);
+        allpictures = getAllImagesByFolder(folderPath);
+        imageRecycler.setAdapter(new picture_Adapter(allpictures, getContext(),this));
+        load.setVisibility(View.GONE);
 
-        if(allpictures.isEmpty()){
-            load.setVisibility(View.VISIBLE);
-            allpictures = getAllImagesByFolder(foldePath);
-            imageRecycler.setAdapter(new picture_Adapter(allpictures, getContext(),this));
-            load.setVisibility(View.GONE);
-        }else{
-
-        }
         return rootView;
     }
 

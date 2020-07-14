@@ -1,34 +1,23 @@
 package com.example.myapplication.ui;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.Map;
 
 public class FragContact extends Fragment{
-    //private View view;
+
     private ListView lv;
 
     public static FragContact newinstance(){
@@ -39,8 +28,7 @@ public class FragContact extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //view=inflater.inflate(R.layout.frag_contact, container, false);
-        //return view;
+
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.frag_contact, container, false);
 
         lv = (ListView) rootView.findViewById(R.id.list);
@@ -49,30 +37,6 @@ public class FragContact extends Fragment{
         // 폰 주소록
         ArrayList<Person> phone_address = ContactUtil.getAddressBook(getContext());
 
-        /*ArrayList<Person> m_orders = new ArrayList<Person>();
-        Iterator ite = phone_address.keySet().iterator();
-        while(ite.hasNext())
-        {
-            String phone = ite.next().toString();
-            String name = phone_address.get(phone).toString();
-            m_orders.add(new Person(name, phone));
-        }
-        // 이름 순으로 정렬
-        Collections.sort(m_orders, new Comparator<Person>() {
-            @Override
-            public int compare(Person p1, Person p2) {
-                return p1.getName().compareTo(p2.getName());
-            }
-        });
-
-        PersonAdapter m_adapter = new PersonAdapter(getContext(), R.layout.view_friend_list, m_orders);
-        lv.setAdapter(m_adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long rowID)
-            {
-                doSelectFriend((Person)parent.getItemAtPosition(position));
-            }});*/
         PersonAdapter personAdapter = new PersonAdapter(getContext(), R.layout.view_friend_list, phone_address);
         lv.setAdapter(personAdapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -84,9 +48,31 @@ public class FragContact extends Fragment{
         return rootView;
     }
 
-    // 한명 선택했을 때
+    // 연락처 list click했을 경우
     public void doSelectFriend(Person p)
     {
+        //전화 열기
+        /*
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + p.getNumber())) ;
+        startActivity(intent);
+         */
+
+        //전화 걸기
+        /*
+        Intent tt = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + p.getNumber())) ;
+        startActivity(tt);
+        */
+
+        // 문자 보내기
+        /*
+        Uri smsUri = Uri.parse("tel:" + p.getNumber());
+        Intent intent = new Intent(Intent.ACTION_VIEW, smsUri);
+        intent.putExtra("address", p.getNumber());
+        intent.putExtra("sms_body", "input message");
+        intent.setType("vnd.android-dir/mms-sms");
+        startActivity(intent);
+        */
+
         Log.e("####", p.getName() + ", " + p.getNumber());
     }
 }

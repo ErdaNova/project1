@@ -7,27 +7,6 @@ public class Person {
     private Long Person_id;
 
     public Person() {}
-    public Person(String _Name, String _Number, Long _Photo_id, Long _Person_id)
-    {
-        this.Name = _Name;
-        this.Number = _Number;
-        this.Photo_id = _Photo_id;
-        this.Person_id = _Person_id;
-    }
-
-    public Person(String _Name, String _Number)
-    {
-        this.Name = _Name;
-        this.Number = _Number;
-    }
-
-    public Person(Person person)
-    {
-        this.Name = person.Name;
-        this.Number = person.Number;
-        this.Photo_id = person.Photo_id;
-        this.Person_id = person.Person_id;
-    }
 
     public Long getPhoto_id() { return Photo_id; }
 

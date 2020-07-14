@@ -1,3 +1,5 @@
+
+
 package com.example.myapplication.ui;
 
 import android.Manifest;
@@ -7,123 +9,172 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
-import androidx.fragment.app.FragmentActivity;
-
-import android.os.Bundle;
-
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
-
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.location.places.PlaceReport;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.GoogleMap;
-
-import java.security.acl.Group;
-
-
-public class FragMap extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
-    private static final LatLng DEFAULT_LOCATION=new LatLng(37.56,126.97);
-    private static final String TAG="googlemap_example";
-    private static final int GPS_ENABLE_REQUEST_CODE=2001;
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION=2002;
-    private static final int UPDATE_INTERVAL_MS=15000;
-    private static final int FASTEST_UPDATE_INTERVAL_MS=15000;
+import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMyLocationClickListener;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.MapStyleOptions;
 
 
-    private GoogleMap googleMap=null;
+public class FragMap extends Fragment
+        implements
+        OnMyLocationButtonClickListener,
+        OnMyLocationClickListener,
+        OnMapReadyCallback,
+        ActivityCompat.OnRequestPermissionsResultCallback {
+
     private MapView mapView = null;
-    private GoogleApiClient googleApiClient=null;
-    private Marker currentMarker=null;
+    private UiSettings uiSettings;
+    private static final String SELECTED_STYLE = "selected_style";
+    Button style;
 
-    private final static int MAXENTRIES=5;
-    private String[] LikelyPlacesNames=null;
-    private String[] LikelyAdresses=null;
-    private String[] LikelyAttributions=null;
-    private LatLng[] LikelyLatLngs=null;
-
-    public FragMap(){
-
-    }
-
-    /*public void setCurrentLocation(Location location, String markerTitle, String markerSnippet) {
-        if (currentMarker!=null) currentMarker.remove();
-
-        if(location!=null){
-            //현재위치의 위도 경도 가져옴
-            LatLng currentLocation=new LatLng(location.getLatitude(),location.getLongitude());
-
-            MarkerOptions markerOptions = new MarkerOptions();
-            markerOptions.position(currentLocation);
-            markerOptions.title(markerTitle);
-            markerOptions.snippet(markerSnippet);
-            markerOptions.draggable(true);
-
-            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
-
-            currentMarker = this.googleMap.addMarker(markerOptions);
-
-            this.googleMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation));
-            return;
-        }
-
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(DEFAULT_LOCATION);
-        markerOptions.title(markerTitle);
-        markerOptions.snippet(markerSnippet);
-        markerOptions.draggable(true);
-
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-        currentMarker= this.googleMap.addMarker(markerOptions);
-        this.googleMap.moveCamera(CameraUpdateFactory.newLatLng(DEFAULT_LOCATION));
-    }*/
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
+    private int count=0;
 
 
+    private static final String TAG=FragMap.class.getSimpleName();
+
+    private GoogleMap map=null;
+
+    private int mSelectedStyleId = R.string.style_label_default;
 
 
-
-
+    private int mStyleIds[] = {
+            R.string.style_label_retro,
+            R.string.style_label_night,
+            R.string.style_label_grayscale,
+            R.string.style_label_no_pois_no_transit,
+            R.string.style_label_default
+    };
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
-
-
-
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.frag_map, container, false);
-
-        mapView = (MapView)rootView.findViewById(R.id.map);
+        View layout = inflater.inflate(R.layout.frag_map, container, false);
+        setHasOptionsMenu(true);
+        mapView = (MapView)layout.findViewById(R.id.map);
         mapView.getMapAsync(this);
+        style=(Button) layout.findViewById(R.id.button);
+        style.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setSelectedStyle(count);
+                count=count+1;
+            }
+        });
 
 
-        return rootView;
+        return layout;
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        if(mapView != null)
+        {
+            mapView.onCreate(savedInstanceState);
+        }
+        if (savedInstanceState != null) {
+            mSelectedStyleId = savedInstanceState.getInt(SELECTED_STYLE);
+        }
+    }
+
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        map = googleMap;
+        uiSettings = map.getUiSettings();
+        map.setOnMyLocationButtonClickListener(this);
+        map.setOnMyLocationClickListener(this);
+        enableMyLocation();
+        uiSettings.setZoomControlsEnabled(true);
+        uiSettings.setCompassEnabled(true);
+        setSelectedStyle(0);
+        setHasOptionsMenu(true);
+    }
+
+
+
+
+
+
+    private void enableMyLocation() {
+        if (ContextCompat.checkSelfPermission(this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            if (map != null) {
+                map.setMyLocationEnabled(true);
+            }
+        }
+    }
+
+
+    @Override
+    public boolean onMyLocationButtonClick() {
+        Toast.makeText(this.getContext(), "MyLocation button clicked", Toast.LENGTH_SHORT).show();
+        return false;
+    }
+
+    @Override
+    public void onMyLocationClick(@NonNull Location location) {
+        Toast.makeText(this.getContext(), "Current location:\n" + location, Toast.LENGTH_LONG).show();
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mapView.onSaveInstanceState(outState);
+    }
+
+
+    private void setSelectedStyle(int count) {
+        MapStyleOptions style;
+        switch (count%4) {
+
+            case 1:
+                // Sets the night style via raw resource JSON.
+                style = MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.mapstyle_retro);
+
+                break;
+            case 2:
+                // Sets the grayscale style via raw resource JSON.
+                style = MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.mapstyle_night);
+                break;
+            case 3:
+                style = MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.mapstyle_grayscale);
+                break;
+            case 0:
+                // Removes previously set style, by setting it to null.
+                style = null;
+                break;
+            default:
+                return;
+        }
+        map.setMapStyle(style);
+    }
+
+
+
 
     @Override
     public void onStart() {
@@ -135,12 +186,6 @@ public class FragMap extends Fragment implements OnMapReadyCallback, GoogleApiCl
     public void onStop() {
         super.onStop();
         mapView.onStop();
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        mapView.onSaveInstanceState(outState);
     }
 
     @Override
@@ -167,63 +212,9 @@ public class FragMap extends Fragment implements OnMapReadyCallback, GoogleApiCl
         mapView.onLowMemory();
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        //액티비티가 처음 생성될 때 실행되는 함수
-
-        if(mapView != null)
-        {
-            mapView.onCreate(savedInstanceState);
-        }
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        LatLng SEOUL = new LatLng(37.56, 126.97);
-
-        MarkerOptions markerOptions = new MarkerOptions();
-
-        markerOptions.position(SEOUL);
-
-        markerOptions.title("서울");
-
-        markerOptions.snippet("수도");
-
-        googleMap.addMarker(markerOptions);
-
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
-
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(16));
-    }
-
     public static FragMap newinstance() {
-        FragMap FragMap = new FragMap();
-        return FragMap;
+        FragMap fragMap = new FragMap();
+        return fragMap;
     }
 
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
-
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onLocationChanged(Location location) {
-
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
 }
-
-
-
-
