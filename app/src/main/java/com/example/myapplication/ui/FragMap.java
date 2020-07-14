@@ -69,7 +69,6 @@ public class FragMap extends Fragment
             R.string.style_label_retro,
             R.string.style_label_night,
             R.string.style_label_grayscale,
-            R.string.style_label_no_pois_no_transit,
             R.string.style_label_default
     };
 
@@ -96,10 +95,6 @@ public class FragMap extends Fragment
                 count=count+1;
             }
         });
-
-
-
-
 
 
         return layout;
