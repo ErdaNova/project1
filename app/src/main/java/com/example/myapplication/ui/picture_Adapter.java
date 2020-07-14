@@ -16,12 +16,6 @@ import java.util.ArrayList;
 
 import static androidx.core.view.ViewCompat.setTransitionName;
 
-/**
- * Author CodeBoy722
- *
- * A RecyclerView Adapter class that's populates a RecyclerView with images from
- * a folder on the device external storage
- */
 public class picture_Adapter extends RecyclerView.Adapter<PicHolder> {
 
     private ArrayList<pictureFacer> pictureList;

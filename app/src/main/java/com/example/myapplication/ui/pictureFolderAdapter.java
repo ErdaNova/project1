@@ -17,11 +17,6 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
-/**
- * Author CodeBoy722
- *
- * An adapter for populating RecyclerView with items representing folders that contain images
- */
 public class pictureFolderAdapter extends RecyclerView.Adapter<pictureFolderAdapter.FolderHolder>{
 
     private ArrayList<imageFolder> folders;
