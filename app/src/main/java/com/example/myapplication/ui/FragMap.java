@@ -159,7 +159,8 @@ public class FragMap extends Fragment
                     Log.d(TAG,resultList.get(1).getAddressLine(0));
                     MarkerOptions mOptions = new MarkerOptions();
 
-                    mOptions.title("마커좌표");
+                    mOptions.title("위치");
+
 
                     mOptions.snippet(resultList.get(0).getAddressLine(0).toString());
                     mOptions.position(new LatLng(point.latitude,point.longitude));
@@ -171,7 +172,7 @@ public class FragMap extends Fragment
                     e.printStackTrace();
                     MarkerOptions mOptions = new MarkerOptions();
 
-                    mOptions.title("마커좌표");
+                    mOptions.title("위치 좌표");
                     Double latitude = point.latitude;
                     Double longitude = point.longitude;
 
