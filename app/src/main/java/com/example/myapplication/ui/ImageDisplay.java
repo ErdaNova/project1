@@ -6,11 +6,18 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.transition.Fade;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
@@ -25,7 +32,7 @@ import java.util.ArrayList;
  * all the images in the folder inside a RecyclerView
  */
 
-public class ImageDisplay extends AppCompatActivity implements itemClickListener {
+public class ImageDisplay extends Fragment implements itemClickListener {
 
     RecyclerView imageRecycler;
     ArrayList<pictureFacer> allpictures;
@@ -33,30 +40,39 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
     String foldePath;
     TextView folderName;
 
+    public static ImageDisplay newinstance(){
+        ImageDisplay imageDisplay = new ImageDisplay();
+        return imageDisplay;
+    }
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_display);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        folderName = findViewById(R.id.foldername);
-        folderName.setText(getIntent().getStringExtra("folderName"));
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_image_display, container, false);
+        Bundle bundle = getArguments();
+        folderName = rootView.findViewById(R.id.foldername);
+        //folderName.setText(getIntent().getStringExtra("folderName"));
+        //foldePath =  getIntent().getStringExtra("folderPath");
+        folderName.setText(bundle.getString("folderName"));
+        foldePath = bundle.getString("folderPath");
 
-        foldePath =  getIntent().getStringExtra("folderPath");
         allpictures = new ArrayList<>();
-        imageRecycler = findViewById(R.id.recycler);
-        imageRecycler.addItemDecoration(new MarginDecoration(this));
+        imageRecycler = rootView.findViewById(R.id.recycler);
+        imageRecycler.addItemDecoration(new MarginDecoration(getContext()));
         imageRecycler.hasFixedSize();
-        load = findViewById(R.id.loader);
+        load = rootView.findViewById(R.id.loader);
 
 
         if(allpictures.isEmpty()){
             load.setVisibility(View.VISIBLE);
             allpictures = getAllImagesByFolder(foldePath);
-            imageRecycler.setAdapter(new picture_Adapter(allpictures,ImageDisplay.this,this));
+            imageRecycler.setAdapter(new picture_Adapter(allpictures, getContext(),this));
             load.setVisibility(View.GONE);
         }else{
 
         }
+        return rootView;
     }
 
     /**
@@ -67,7 +83,7 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
      */
     @Override
     public void onPicClicked(PicHolder holder, int position, ArrayList<pictureFacer> pics) {
-        pictureBrowserFragment browser = pictureBrowserFragment.newInstance(pics,position,ImageDisplay.this);
+        pictureBrowserFragment browser = pictureBrowserFragment.newInstance(pics,position,getContext());
 
         // Note that we need the API version check here because the actual transition classes (e.g. Fade)
         // are not in the support library and are only available in API 21+. The methods we are calling on the Fragment
@@ -80,12 +96,11 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
             browser.setExitTransition(new Fade());
         }
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .addSharedElement(holder.picture, position+"picture")
-                .add(R.id.displayContainer, browser)
-                .addToBackStack(null)
-                .commit();
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.addSharedElement(holder.picture, position+"picture");
+        transaction.add(R.id.displayContainer, browser);
+        transaction.addToBackStack(null);
+        transaction.commit();
 
     }
 
@@ -104,7 +119,7 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
         Uri allVideosuri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
         String[] projection = { MediaStore.Images.ImageColumns.DATA , MediaStore.Images.Media.DISPLAY_NAME,
                 MediaStore.Images.Media.SIZE};
-        Cursor cursor = ImageDisplay.this.getContentResolver().query( allVideosuri, projection, MediaStore.Images.Media.DATA + " like ? ", new String[] {"%"+path+"%"}, null);
+        Cursor cursor = getContext().getContentResolver().query( allVideosuri, projection, MediaStore.Images.Media.DATA + " like ? ", new String[] {"%"+path+"%"}, null);
         try {
             cursor.moveToFirst();
             do{

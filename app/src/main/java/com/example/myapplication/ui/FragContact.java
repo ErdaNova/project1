@@ -1,6 +1,7 @@
 package com.example.myapplication.ui;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,12 +45,11 @@ public class FragContact extends Fragment{
 
         lv = (ListView) rootView.findViewById(R.id.list);
 
-        ArrayList<Person> m_orders = new ArrayList<Person>();
 
         // 폰 주소록
-        Map<String, String> phone_address = ContactUtil.getAddressBook(getContext());
+        ArrayList<Person> phone_address = ContactUtil.getAddressBook(getContext());
 
-        @SuppressWarnings("rawtypes")
+        /*ArrayList<Person> m_orders = new ArrayList<Person>();
         Iterator ite = phone_address.keySet().iterator();
         while(ite.hasNext())
         {
@@ -72,6 +72,14 @@ public class FragContact extends Fragment{
             public void onItemClick(AdapterView<?> parent, View view, int position, long rowID)
             {
                 doSelectFriend((Person)parent.getItemAtPosition(position));
+            }});*/
+        PersonAdapter personAdapter = new PersonAdapter(getContext(), R.layout.view_friend_list, phone_address);
+        lv.setAdapter(personAdapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long rowID)
+            {
+                doSelectFriend((Person)parent.getItemAtPosition(position));
             }});
         return rootView;
     }
@@ -80,79 +88,5 @@ public class FragContact extends Fragment{
     public void doSelectFriend(Person p)
     {
         Log.e("####", p.getName() + ", " + p.getNumber());
-    }
-
-    private class PersonAdapter extends ArrayAdapter<Person>
-    {
-        private ArrayList<Person> items;
-
-        public PersonAdapter(Context context, int textViewResourceId, ArrayList<Person> items)
-        {
-            super(context, textViewResourceId, items);
-            this.items = items;
-        }
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent)
-        {
-            View v = convertView;
-            if (v == null)
-            {
-                LayoutInflater vi = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                v = vi.inflate(R.layout.view_friend_list, null);
-            }
-            Person p = items.get(position);
-            if (p != null)
-            {
-                //ImageView photo = (ImageView) v.findViewById(R.id.photo);
-                TextView tt = (TextView) v.findViewById(R.id.name);
-                TextView bt = (TextView) v.findViewById(R.id.msg);
-                //if (photo != null)
-                //{
-                //    photo.setImageDrawable(p.getPhoto());
-                //}
-                if (tt != null)
-                {
-                    tt.setText(p.getName());
-                }
-                if(bt != null)
-                {
-                    bt.setText("전화번호: "+ p.getNumber());
-                }
-            }
-            return v;
-        }
-    }
-
-    class Person
-    {
-        private Drawable Photo;
-        private String Name;
-        private String Number;
-
-        public Person(Drawable _Photo, String _Name, String _Number)
-        {
-            this.Photo = _Photo;
-            this.Name = _Name;
-            this.Number = _Number;
-        }
-
-        public Person(String _Name, String _Number)
-        {
-            //this.Photo = "@drawable/cat";
-            this.Name = _Name;
-            this.Number = _Number;
-        }
-
-        public Drawable getPhoto() { return Photo; }
-
-        public String getName()
-        {
-            return Name;
-        }
-
-        public String getNumber()
-        {
-            return Number;
-        }
     }
 }

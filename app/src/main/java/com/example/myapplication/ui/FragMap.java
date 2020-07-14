@@ -40,9 +40,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.GoogleMap;
 
-
-
-
+import java.security.acl.Group;
 
 
 public class FragMap extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
@@ -69,7 +67,7 @@ public class FragMap extends Fragment implements OnMapReadyCallback, GoogleApiCl
 
     }
 
-    public void setCurrentLocation(Location location, String markerTitle, String markerSnippet) {
+    /*public void setCurrentLocation(Location location, String markerTitle, String markerSnippet) {
         if (currentMarker!=null) currentMarker.remove();
 
         if(location!=null){
@@ -99,7 +97,7 @@ public class FragMap extends Fragment implements OnMapReadyCallback, GoogleApiCl
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         currentMarker= this.googleMap.addMarker(markerOptions);
         this.googleMap.moveCamera(CameraUpdateFactory.newLatLng(DEFAULT_LOCATION));
-    }
+    }*/
 
 
 
@@ -118,14 +116,13 @@ public class FragMap extends Fragment implements OnMapReadyCallback, GoogleApiCl
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.frag_map, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.frag_map, container, false);
 
-        mapView = (MapView)layout.findViewById(R.id.map);
+        mapView = (MapView)rootView.findViewById(R.id.map);
         mapView.getMapAsync(this);
 
-        AutocompleteSupportFragment autocompleteSupportFragment = (AutocompleteSupportFragment)
 
-        return layout;
+        return rootView;
     }
 
     @Override
@@ -198,7 +195,7 @@ public class FragMap extends Fragment implements OnMapReadyCallback, GoogleApiCl
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
 
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(13));
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(16));
     }
 
     public static FragMap newinstance() {

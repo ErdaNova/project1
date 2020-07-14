@@ -22,19 +22,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="갤러리"
+        android:label="Project1"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC6roAliCOgdd92LFth81l1GveihpSssTM" />
-
-        <activity android:name=".ui.ImageDisplay"
-            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".ui.MainActivity"

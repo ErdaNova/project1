@@ -2,10 +2,12 @@ package com.example.myapplication.ui;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
 import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 
@@ -45,7 +47,7 @@ public class ContactUtil {
     public static ArrayList<String> contactPhoneNumber(Context context, boolean isIDD)
     {
         ArrayList<String> phone = new ArrayList<String>();
-        Cursor cursor = context.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        Cursor cursor = context.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " COLLATE LOCALIZED ASC");
         while(cursor.moveToNext())
         {
             int index = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
@@ -76,25 +78,34 @@ public class ContactUtil {
      * @param isIDD 국제전화 규격 적용 여부
      * @return 이름, 전화번호 map
      */
-    public static Map<String, String> getAddressBook(Context context, boolean isIDD)
+    public static ArrayList<Person> getAddressBook(Context context, boolean isIDD)
     {
-        Map<String, String> result = new HashMap<String, String>();
-        Cursor cursor = context.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        Uri uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
+        String[] projection = new String[]{
+                ContactsContract.CommonDataKinds.Phone.NUMBER,
+                ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+                ContactsContract.Contacts.PHOTO_ID,
+                ContactsContract.Contacts._ID
+        };
+        String sortOrder = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " COLLATE LOCALIZED ASC";
+        Cursor cursor = context.getContentResolver().query(uri, projection, null, null, sortOrder);
+        LinkedHashSet<Person> hashlist = new LinkedHashSet<>();
         while(cursor.moveToNext())
         {
-            int phone_idx = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-            int name_idx = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME);
-            String phone = cursor.getString(phone_idx);
-            String name = cursor.getString(name_idx);
-
+            Person Item = new Person();
             if (isIDD)
-                result.put(getIDD(phone), name);
+                Item.setNumber(getIDD(cursor.getString(0)));
             else
-                result.put(phone, name);
+                Item.setNumber(cursor.getString(0));
+            Item.setName(cursor.getString(1));
+            Item.setPhoto_id(cursor.getLong(2));
+            Item.setPerson_id(cursor.getLong(3));
+
+            hashlist.add(Item);
 
 //          Log.e("####getAddressBook", name + " : "+phone);
         }
-
+        ArrayList<Person> result = new ArrayList<>(hashlist);
         return result;
     }
     /**
@@ -102,7 +113,7 @@ public class ContactUtil {
      * @param context
      * @return 이름, 전화번호 map
      */
-    public static Map<String, String> getAddressBook(Context context)
+    public static ArrayList<Person> getAddressBook(Context context)
     {
         return getAddressBook(context, false);
     }
