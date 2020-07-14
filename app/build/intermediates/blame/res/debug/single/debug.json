@@ -144,6 +144,10 @@
         "source": "C:\\Users\\q\\Desktop\\GJ\\project1\\app\\src\\main\\res\\drawable\\line.xml"
     },
     {
+        "merged": "C:\\Users\\q\\Desktop\\GJ\\project1\\app\\build\\intermediates\\res\\merged\\debug\\layout_call_or_msg.xml.flat",
+        "source": "C:\\Users\\q\\Desktop\\GJ\\project1\\app\\src\\main\\res\\layout\\call_or_msg.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\Desktop\\GJ\\project1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\q\\Desktop\\GJ\\project1\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
     },

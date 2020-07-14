@@ -1,5 +1,6 @@
 package com.example.myapplication.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -72,6 +73,10 @@ public class FragContact extends Fragment{
         intent.setType("vnd.android-dir/mms-sms");
         startActivity(intent);
         */
+
+        Intent intent = new Intent(getContext(), CallOrMsgSelect.class);
+        intent.putExtra("number", p.getNumber());
+        startActivity(intent);
 
         Log.e("####", p.getName() + ", " + p.getNumber());
     }

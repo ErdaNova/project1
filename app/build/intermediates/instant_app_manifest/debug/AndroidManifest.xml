@@ -45,6 +45,10 @@
             android:value="AIzaSyC6roAliCOgdd92LFth81l1GveihpSssTM" />
 
         <activity
+            android:name="com.example.myapplication.ui.CallOrMsgSelect"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+        <activity
             android:name="com.example.myapplication.ui.MainActivity"
             android:label="Project1"
             android:theme="@style/AppTheme.NoActionBar" >

@@ -1637,8 +1637,11 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn1
+id btn2
 id button
 id buttonPanel
+id call_or_msg
 id center
 id center_horizontal
 id center_vertical
@@ -1940,6 +1943,7 @@ layout activity_maps
 layout amu_info_window
 layout amu_text_bubble
 layout amu_webview
+layout call_or_msg
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2466,6 +2470,7 @@ style Theme_MaterialComponents_Light_NoActionBar
 style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
+style Theme_Transparent
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
