@@ -6,41 +6,41 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml
+8-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml
+9-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.READ_CONTACTS" />
-11-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:5:5-71
-11-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:5:22-69
+11-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:5:5-71
+11-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:5:22-69
 12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-12-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:7:5-8:67
-12-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:8:9-64
+12-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:7:5-8:67
+12-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:8:9-64
 13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-13-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:9:5-10:68
-13-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:10:9-65
+13-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:9:5-10:68
+13-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:10:9-65
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:11:5-66
-14-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:11:22-64
+14-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:11:5-66
+14-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:11:22-64
 15    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-15-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:12:5-97
-15-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:12:22-95
+15-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:12:5-97
+15-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:12:22-95
 16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-16-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:13:5-80
-16-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:13:22-78
+16-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:13:5-80
+16-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:13:22-78
 17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-17-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:14:5-78
-17-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:14:22-76
+17-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:14:5-78
+17-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:14:22-76
 18    <uses-permission android:name="android.permission.CALL_PHONE" />
-18-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:15:5-69
-18-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:15:22-66
+18-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:15:5-69
+18-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:15:22-66
 19
 20    <meta-data
-20-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:17:5-19:67
+20-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:17:5-19:67
 21        android:name="com.google.android.geo.API_KEY"
-21-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:18:9-54
+21-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:18:9-54
 22        android:value="AIzaSyC6roAliCOgdd92LFth81l1GveihpSssTM" />
-22-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:19:9-64
+22-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:19:9-64
 23
 24    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Include required permissions for Google Maps API to run. -->
 24-->[com.google.android.libraries.places:places:2.2.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\ff2280665d7310a6c611dce715cdb416\jetified-places-2.2.0\AndroidManifest.xml:10:5-76
@@ -57,48 +57,48 @@
 29-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\7345f62f6933bfbfe70b0b6c644df5f1\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
 30
 31    <application
-31-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:24:5-45:19
+31-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:24:5-45:19
 32        android:name="androidx.multidex.MultiDexApplication"
 33        android:allowBackup="true"
-33-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:25:9-35
+33-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:25:9-35
 34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 34-->[androidx.core:core:1.3.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\8106c9afeb27cc0c50f85995740f877c\core-1.3.0\AndroidManifest.xml:24:18-86
 35        android:debuggable="true"
 36        android:icon="@mipmap/ic_launcher"
-36-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:26:9-43
+36-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:26:9-43
 37        android:label="Project1"
-37-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:27:9-33
+37-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:27:9-33
 38        android:roundIcon="@mipmap/ic_launcher_round"
-38-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:28:9-54
+38-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:28:9-54
 39        android:supportsRtl="true"
-39-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:29:9-35
+39-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:29:9-35
 40        android:testOnly="true"
 41        android:theme="@style/AppTheme" >
-41-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:30:9-40
+41-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:30:9-40
 42        <meta-data
-42-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:17:5-19:67
+42-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:17:5-19:67
 43            android:name="com.google.android.geo.API_KEY"
-43-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:18:9-54
+43-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:18:9-54
 44            android:value="AIzaSyC6roAliCOgdd92LFth81l1GveihpSssTM" />
-44-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:19:9-64
+44-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:19:9-64
 45
 46        <activity
-46-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:35:9-44:20
+46-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:35:9-44:20
 47            android:name="com.example.myapplication.ui.MainActivity"
-47-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:36:13-44
+47-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:36:13-44
 48            android:label="Project1"
-48-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:37:13-37
+48-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:37:13-37
 49            android:theme="@style/AppTheme.NoActionBar" >
-49-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:38:13-56
+49-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:38:13-56
 50            <intent-filter>
-50-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:39:13-43:29
+50-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:39:13-43:29
 51                <action android:name="android.intent.action.MAIN" />
-51-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:40:17-69
-51-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:40:25-66
+51-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:40:17-69
+51-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:40:25-66
 52
 53                <category android:name="android.intent.category.LAUNCHER" />
-53-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:42:17-77
-53-->C:\Users\q\Desktop\GJ\project1\app\src\main\AndroidManifest.xml:42:27-74
+53-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:42:17-77
+53-->C:\Users\q\Desktop\project1\app\src\main\AndroidManifest.xml:42:27-74
 54            </intent-filter>
 55        </activity>
 56        <activity

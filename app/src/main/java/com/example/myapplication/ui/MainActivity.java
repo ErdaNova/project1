@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
 
             TabLayout tabLayout = findViewById(R.id.tab_layout);
             viewPager.setAdapter(fragmentPagerAdapter);
+            viewPager.setOffscreenPageLimit(10);
             tabLayout.setupWithViewPager(viewPager);
         }
     }
