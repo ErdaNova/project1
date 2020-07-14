@@ -42,7 +42,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class FragMap extends Fragment
         implements
-        OnMyLocationButtonClickListener,
+
         OnMyLocationClickListener,
         OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback {
@@ -150,7 +150,7 @@ public class FragMap extends Fragment
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(14));
 
         uiSettings = map.getUiSettings();
-        map.setOnMyLocationButtonClickListener(this);
+        
         map.setOnMyLocationClickListener(this);
         enableMyLocation();
         uiSettings.setZoomControlsEnabled(true);
@@ -206,11 +206,7 @@ public class FragMap extends Fragment
     }
 
 
-    @Override
-    public boolean onMyLocationButtonClick() {
 
-        return false;
-    }
 
     @Override
     public void onMyLocationClick(@NonNull Location location) {
@@ -240,7 +236,7 @@ public class FragMap extends Fragment
 
     }
 
-    
+
 
 
     @Override
